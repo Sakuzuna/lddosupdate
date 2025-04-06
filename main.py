@@ -32,7 +32,15 @@ green = Fore.GREEN
 reset = Fore.RESET
 white = Fore.WHITE
 
+def clearcs():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 def bannerm():
+    subprocess.run(['timeout', '4s', 'cmatrix'])
+    clearcs()
     print(Colorate.Horizontal(Colors.red_to_white, ("""
 ██╗     ██████╗ ██████╗  ██████╗ ███████╗
 ██║     ██╔══██╗██╔══██╗██╔═══██╗██╔════╝
@@ -42,13 +50,6 @@ def bannerm():
 ╚══════╝╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝          
 """)))
 
-def clearcs():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
-
-# Updated 2025 Accept headers
 acceptall = [
     "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\nAccept-Language: en-US,en;q=0.9\r\nAccept-Encoding: gzip, deflate, br\r\n",
     "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
@@ -72,7 +73,6 @@ acceptall = [
     "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate, br\r\nAccept-Language: en-US,en;q=0.7\r\n"
 ]
 
-# Updated 2025 Referers
 referers = [
     "https://www.google.com/",
     "https://www.bing.com/",
@@ -109,7 +109,6 @@ referers = [
     "https://www.google.co.ao/search?q=",
 ]
 
-# Common cookies for 2025
 common_cookies = [
     "_ga=GA1.2.1234567890.1234567890; _gid=GA1.2.987654321.987654321; _gat=1",
     "__cfduid=d1234567890abcdef1234567890abcdef1234567890; _cb_ls=1",
