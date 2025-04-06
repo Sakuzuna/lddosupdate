@@ -722,7 +722,7 @@ def main():
 
     event = threading.Event()
     clearcs()
-    subprocess.run(['python3', 'banner.py'])
+    subprocess.run(['timeout', '4s', 'cmatrix'])
     print(Colorate.Horizontal(Colors.red_to_white, f"""
 
 
@@ -751,5 +751,7 @@ def main():
     time.sleep(period)
 
 if __name__ == "__main__":
-    subprocess.run(['timeout', '2s', 'cmatrix'])
+    print("Installing packages...")
+    subprocess.run(['sudo', 'apt', 'install', 'cmatrix'])
+    subprocess.run(['timeout', '4s', 'cmatrix'])
     main()
