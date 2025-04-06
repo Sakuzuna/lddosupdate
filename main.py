@@ -753,5 +753,5 @@ def main():
 if __name__ == "__main__":
     print("Installing packages...")
     subprocess.run(['sudo', 'apt', 'install', 'cmatrix'])
-    subprocess.run(['timeout', '4s', 'cmatrix'])
+    bannerm()
     main()
