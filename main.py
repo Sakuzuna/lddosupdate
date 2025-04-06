@@ -39,7 +39,9 @@ def clearcs():
         os.system('clear')
 
 def bannerm():
-    subprocess.run(['timeout', '4s', 'cmatrix'])
+    proc = subprocess.Popen(["cmatrix"])
+    time.sleep(3)
+    proc.terminate()
     clearcs()
     print(Colorate.Horizontal(Colors.red_to_white, ("""
 ██╗     ██████╗ ██████╗  ██████╗ ███████╗
@@ -750,7 +752,9 @@ def main():
     time.sleep(period)
 
 if __name__ == "__main__":
-    print("Installing packages...")
-    subprocess.run(['sudo', 'apt', 'install', 'cmatrix'])
+    proc = subprocess.Popen(["cmatrix"])
+    time.sleep(3)
+    proc.terminate()
+    clearcs()
     bannerm()
     main()
